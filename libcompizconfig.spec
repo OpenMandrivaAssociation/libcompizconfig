@@ -39,6 +39,7 @@ Backend configuration library from Compiz Fusion
 %package -n %libname
 Summary: Backend configuration library from Compiz Fusion
 Group: System/X11
+Provides: %name = %{version}-%{release}
 
 %description -n %libname
 Backend configuration library from Compiz Fusion
@@ -80,7 +81,6 @@ rm -rf %{buildroot}
 
 %files -n %libname
 %defattr(-,root,root)
-%{_libdir}
 %{_libdir}/compiz/libccp.so
 %{_libdir}/%{shortname}/backends/libini.so
 %{_libdir}/%{name}.so.*
