@@ -30,8 +30,6 @@ URL: http://www.compiz-fusion.org/
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires: libxml2-devel
 BuildRequires: compiz-devel
-BuildRequires: glib2-devel
-BuildRequires: gettext-devel
 
 %description
 Backend configuration library from Compiz Fusion
