@@ -42,6 +42,7 @@ Backend configuration library from Compiz Fusion
 Summary: Backend configuration library from Compiz Fusion
 Group: System/X11
 Provides: %name = %{version}-%{release}
+Requires: compiz
 
 %description -n %libname
 Backend configuration library from Compiz Fusion
