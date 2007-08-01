@@ -2,7 +2,7 @@
 %define name libcompizconfig
 %define version 0.0.1
 %define rel 1
-%define git 20070724
+%define git 20070801
 
 %define major 0
 %define libname %mklibname %shortname %major
