@@ -1,7 +1,7 @@
 %define shortname compizconfig
 %define name libcompizconfig
 %define version 0.0.1
-%define rel 1
+%define rel 2
 %define git 20070801
 
 %define major 0
@@ -42,7 +42,6 @@ Backend configuration library from Compiz Fusion
 Summary: Backend configuration library from Compiz Fusion
 Group: System/X11
 Provides: %name = %{version}-%{release}
-Requires: compiz
 
 %description -n %libname
 Backend configuration library from Compiz Fusion
