@@ -1,8 +1,8 @@
 %define shortname compizconfig
 %define name libcompizconfig
 %define version 0.0.1
-%define rel 2
-%define git 20070801
+%define rel 1
+%define git 20070811
 
 %define major 0
 %define libname %mklibname %shortname %major
@@ -92,6 +92,7 @@ rm -rf %{buildroot}
 %defattr(-,root,root)
 %dir %{_includedir}/%{shortname}
 %{_includedir}/%{shortname}/ccs.h
+%{_includedir}/%{shortname}/ccs-backend.h
 %{_libdir}/compiz/libccp.a
 %{_libdir}/%{shortname}/backends/libini.a
 %{_libdir}/%{name}.a
