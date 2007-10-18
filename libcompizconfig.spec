@@ -1,8 +1,8 @@
 %define shortname compizconfig
 %define name libcompizconfig
-%define version 0.5.2
-%define rel 2
-%define git 0
+%define version 0.6.0
+%define rel 1
+%define git 20071018
 
 %define major 0
 %define libname %mklibname %shortname %major
@@ -83,6 +83,8 @@ rm -rf %{buildroot}
 
 %files -n %libname
 %defattr(-,root,root)
+%dir %{_sysconfdir}/compizconfig
+%{_sysconfdir}/compizconfig/config
 %{_libdir}/compiz/libccp.so
 %{_libdir}/%{shortname}/backends/libini.so
 %{_libdir}/%{name}.so.*
