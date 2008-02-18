@@ -1,8 +1,8 @@
 %define shortname compizconfig
 %define name libcompizconfig
-%define version 0.6.0
-%define rel 2
-%define git 0
+%define version 0.6.99
+%define rel 1
+%define git 20080218
 
 %define major 0
 %define libname %mklibname %shortname %major
@@ -29,7 +29,7 @@ Group: System/X11
 URL: http://www.compiz-fusion.org/
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires: libxml2-devel
-BuildRequires: compiz-devel = 0.6.2
+BuildRequires: compiz-devel = 0.7.0
 BuildRequires: gettext-devel
 BuildRequires: intltool
 
@@ -89,6 +89,7 @@ rm -rf %{buildroot}
 %{_libdir}/%{shortname}/backends/libini.so
 %{_libdir}/%{name}.so.*
 %{_datadir}/%{shortname}/global.xml
+%{_datadir}/compiz/ccp.xml
 
 %files -n %libname_devel
 %defattr(-,root,root)
