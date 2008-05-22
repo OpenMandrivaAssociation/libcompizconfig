@@ -1,8 +1,9 @@
 %define shortname compizconfig
 %define name libcompizconfig
-%define version 0.7.4
+%define version 0.7.5
 %define rel 1
-%define git 0
+%define git 20080522
+%define _disable_ld_no_undefined 1
 
 %define major 0
 %define libname %mklibname %shortname %major
@@ -62,6 +63,8 @@ Development files for libcompizconfig
 
 %prep
 %setup -q -n %{distname}
+# (cg) problem with linking. I'm too lazy to create a patch. I've told upstream.
+perl -pi -e "s|\@LIBXML2_LIBS\@|\@LIBXML2_LIBS\@ -lX11|" src/Makefile.am
 
 %build
 %if %{git}
