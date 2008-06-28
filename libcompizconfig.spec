@@ -1,8 +1,8 @@
 %define shortname compizconfig
 %define name libcompizconfig
-%define version 0.7.5
+%define version 0.7.6
 %define rel 1
-%define git 20080522
+%define git 0
 %define _disable_ld_no_undefined 1
 
 %define major 0
