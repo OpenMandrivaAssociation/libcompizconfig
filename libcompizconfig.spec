@@ -1,9 +1,8 @@
 %define shortname compizconfig
 %define name libcompizconfig
 %define version 0.7.8
-%define rel 1
+%define rel 2
 %define git 0
-%define _disable_ld_no_undefined 1
 
 %define major 0
 %define libname %mklibname %shortname %major
@@ -71,6 +70,9 @@ perl -pi -e "s|\@LIBXML2_LIBS\@|\@LIBXML2_LIBS\@ -lX11|" src/Makefile.am
   # This is a GIT snapshot, so we need to generate makefiles.
   sh autogen.sh -V
 %endif
+# Needed due to X11 link cockup in src/Makefile.in
+aclocal
+automake
 %configure2_5x
 %make
 
