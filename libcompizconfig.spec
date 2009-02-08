@@ -1,8 +1,8 @@
 %define shortname compizconfig
 %define name libcompizconfig
-%define version 0.7.8
-%define rel 2
-%define git 0
+%define version 0.8.0
+%define rel 1
+%define git 20090208
 
 %define major 0
 %define libname %mklibname %shortname %major
@@ -62,12 +62,10 @@ Development files for libcompizconfig
 
 %prep
 %setup -q -n %{distname}
-# (cg) problem with linking. I'm too lazy to create a patch. I've told upstream.
-perl -pi -e "s|\@LIBXML2_LIBS\@|\@LIBXML2_LIBS\@ -lX11|" src/Makefile.am
 
 %build
 %if %{git}
-  # This is a GIT snapshot, so we need to generate makefiles.
+  # This is a git snapshot, so we need to generate makefiles.
   sh autogen.sh -V
 %endif
 # Needed due to X11 link cockup in src/Makefile.in
@@ -93,7 +91,6 @@ rm -rf %{buildroot}
 %{_libdir}/compiz/libccp.so
 %{_libdir}/%{shortname}/backends/libini.so
 %{_libdir}/%{name}.so.*
-%{_datadir}/%{shortname}/global.xml
 %{_datadir}/compiz/ccp.xml
 
 %files -n %libname_devel
