@@ -1,8 +1,8 @@
 %define shortname compizconfig
 %define name libcompizconfig
-%define version 0.8.0
+%define version 0.8.2
 %define rel 1
-%define git 20090208
+%define git 0
 
 %define major 0
 %define libname %mklibname %shortname %major
@@ -90,7 +90,7 @@ rm -rf %{buildroot}
 %{_sysconfdir}/compizconfig/config
 %{_libdir}/compiz/libccp.so
 %{_libdir}/%{shortname}/backends/libini.so
-%{_libdir}/%{name}.so.*
+%{_libdir}/%{name}.so.%{major}*
 %{_datadir}/compiz/ccp.xml
 
 %files -n %libname_devel
