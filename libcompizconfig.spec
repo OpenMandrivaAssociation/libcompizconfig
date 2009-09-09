@@ -1,7 +1,7 @@
 %define shortname compizconfig
 %define name libcompizconfig
 %define version 0.8.2
-%define rel 2
+%define rel 3 
 %define git 0
 
 %define major 0
@@ -29,7 +29,7 @@ Group: System/X11
 URL: http://www.compiz-fusion.org/
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires: libxml2-devel
-BuildRequires: compiz-devel = %{version}
+BuildRequires: compiz-devel >= %{version}
 BuildRequires: gettext-devel
 BuildRequires: intltool
 
