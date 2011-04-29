@@ -1,7 +1,7 @@
 %define shortname compizconfig
 %define name libcompizconfig
 %define version 0.8.4
-%define rel 3
+%define rel 4
 %define git 0
 
 %define major 0
