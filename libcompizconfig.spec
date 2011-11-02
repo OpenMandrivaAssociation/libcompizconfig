@@ -21,7 +21,7 @@ Summary:	Backend configuration library from Compiz Fusion
 Name:		libcompizconfig
 Version:	0.9.5.92
 Release:	%release
-Source0:	http://http://releases.compiz.org/%{version}%{srcname}
+Source0:	http://http://releases.compiz.org/%{version}/%{srcname}
 License:	GPL
 Group:		System/X11
 URL:		http://www.compiz.org/
