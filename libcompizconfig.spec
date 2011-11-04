@@ -1,5 +1,5 @@
 %define _disable_ld_no_undefined 1
-%define rel 1
+%define rel 2
 %define git 0
 
 %define shortname compizconfig
@@ -22,6 +22,7 @@ Name:		libcompizconfig
 Version:	0.9.5.92
 Release:	%release
 Source0:	http://http://releases.compiz.org/%{version}/%{srcname}
+Patch0: 	fix_libdir.patch
 License:	GPL
 Group:		System/X11
 URL:		http://www.compiz.org/
@@ -57,6 +58,7 @@ Development files for libcompizconfig
 
 %prep
 %setup -qn %{distname}
+%patch0 -p1
 
 %build
 %if %{git}
@@ -73,6 +75,12 @@ rm -rf %{buildroot}
 %makeinstall_std -C build
 find %{buildroot} -name *.la -exec rm -f {} \;
 
+# This should work, but is buggy upstream:
+# make DESTDIR=%{buildroot} findcompizconfig_install
+# So we do this instead:
+mkdir -p %{buildroot}%{_datadir}/cmake/Modules
+cmake -E copy ../cmake/FindCompizConfig.cmake %{buildroot}%{_datadir}/cmake/Modules
+
 %clean
 rm -rf %{buildroot}
 
@@ -80,7 +88,7 @@ rm -rf %{buildroot}
 %files -n %{libname}
 %defattr(-,root,root)
 %{_libdir}/compiz/libccp.so
-%{_prefix}/lib/%{shortname}/backends/libini.so
+%{_libdir}/%{shortname}/backends/libini.so
 %{_libdir}/%{name}.so.*
 %{_datadir}/gconf/schemas/*.schemas
 %{_datadir}/glib-2.0/schemas/*.xml
@@ -93,5 +101,6 @@ rm -rf %{buildroot}
 %{_libdir}/%{name}.so
 %{_libdir}/pkgconfig/*
 %{_datadir}/compiz/cmake/*cmake
+%{_datadir}/cmake/Modules
 
 
