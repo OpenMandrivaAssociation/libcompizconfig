@@ -33,6 +33,7 @@ BuildRequires: compiz-devel >= %{version}
 BuildRequires: gettext-devel
 BuildRequires: protobuf-devel
 BuildRequires: intltool
+BuildRequires: xsltproc
 
 %description
 Backend configuration library from Compiz Fusion
