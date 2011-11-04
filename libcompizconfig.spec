@@ -79,7 +79,7 @@ find %{buildroot} -name *.la -exec rm -f {} \;
 # make DESTDIR=%{buildroot} findcompizconfig_install
 # So we do this instead:
 mkdir -p %{buildroot}%{_datadir}/cmake/Modules
-cmake -E copy ../cmake/FindCompizConfig.cmake %{buildroot}%{_datadir}/cmake/Modules
+cmake -E copy cmake/FindCompizConfig.cmake %{buildroot}%{_datadir}/cmake/Modules
 
 %clean
 rm -rf %{buildroot}
