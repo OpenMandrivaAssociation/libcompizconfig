@@ -25,7 +25,7 @@ Source0:	http://http://releases.compiz.org/%{version}/%{srcname}
 Patch0: 	fix_libdir.patch
 License:	GPL
 Group:		System/X11
-URL:		http://www.compiz.org/
+URL:		https://www.compiz.org/
 
 BuildRequires: cmake
 BuildRequires: libxml2-devel
